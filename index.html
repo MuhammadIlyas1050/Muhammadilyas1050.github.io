@@ -13,7 +13,6 @@
     "name": "Muhammad Ilyas",
     "jobTitle": "Civil Engineering Student",
     "url": "https://muhammadilyas1050.github.io/",
-    "alumniOf": "Your University Name",
     "email": "mailto:you@email.com",
     "sameAs": [
       "https://linkedin.com/in/yourname",
@@ -38,12 +37,11 @@
       <a class="logo" href="/" aria-label="Home, Muhammad Ilyas Portfolio">Muhammad Ilyas</a>
       <nav aria-label="Main Navigation">
         <a href="projects.html" class="nav-link"><i class="fas fa-hammer"></i> Projects</a>
-        <a href="#skills" class="nav-link"><i class="fas fa-cogs"></i> Expertise</a>
-        <a href="#experience" class="nav-link"><i class="fas fa-building"></i> Experience</a>
+        <a href="#expertise" class="nav-link"><i class="fas fa-cogs"></i> Expertise</a>
         <a href="#about" class="nav-link"><i class="fas fa-user-tie"></i> About</a>
         <a class="btn primary-btn cta-btn" href="#contact"><i class="fas fa-paper-plane"></i> Contact</a>
       </nav>
-      <button id="theme-toggle" aria-label="Toggle light and dark theme"><i class="fas fa-sun"></i></button>
+      <button id="theme-toggle" aria-label="Toggle light and dark theme" class="theme-toggle-btn"><i class="fas fa-sun"></i></button>
     </div>
   </header>
 
@@ -60,41 +58,53 @@
       </div>
       
       <div class="tool-ticker" role="list">
-          <span role="listitem">Structural Design</span><span role="listitem">Hydraulic Modeling</span><span role="listitem">AASHTO</span>
+          <span role="listitem">Structural Dynamics</span><span role="listitem">Hydraulic Modeling</span><span role="listitem">Transportation Planning</span>
       </div>
     </section>
 
     <section class="container featured section-padding">
       <h2 class="section-title">Key Projects **& Technical Deep Dives**</h2>
       
-      <div id="featured-grid" class="project-grid" aria-live="polite">
+      <div id="featured-grid" class="project-grid">
         <article class="project-card" tabindex="0">
-          <figure class="project-media-placeholder"></figure>
+          <figure class="project-media-placeholder">Structural Analysis</figure>
           <div class="card-content">
             <h3>Seismic Performance Analysis</h3>
-            <p>Advanced non-linear pushover analysis for a high-rise structure, optimizing material use by 15%.</p>
+            <p>Non-linear pushover analysis for a high-rise structure, achieving 15% material optimization.</p>
             <div class="project-tags">
                 <span class="tag tag-structural">Structural Dynamics</span>
                 <span class="tag tag-tool">ETABS/SAP2000</span>
             </div>
-            <a href="project-1.md" class="read-more-link" aria-label="Read full case study for Seismic Performance Analysis">Read Case Study <i class="fas fa-arrow-right"></i></a>
+            <a href="project-1.md" class="read-more-link">Read Case Study <i class="fas fa-arrow-right"></i></a>
           </div>
         </article>
         
         <article class="project-card" tabindex="0">
-          <figure class="project-media-placeholder"></figure>
+          <figure class="project-media-placeholder">Geometric Design</figure>
           <div class="card-content">
             <h3>LRT Geometric Alignment Optimization</h3>
-            <p>Developed full horizontal and vertical alignments for a Light Rail Transit (LRT) extension using Civil 3D.</p>
+            <p>Developed full horizontal and vertical alignments for a Light Rail Transit (LRT) extension.</p>
             <div class="project-tags">
                 <span class="tag tag-transportation">Transportation Planning</span>
                 <span class="tag tag-tool">Civil 3D</span>
             </div>
-            <a href="project-2.md" class="read-more-link" aria-label="Read full case study for LRT Geometric Alignment Optimization">Read Case Study <i class="fas fa-arrow-right"></i></a>
+            <a href="project-2.md" class="read-more-link">Read Case Study <i class="fas fa-arrow-right"></i></a>
           </div>
         </article>
         
-        </div>
+        <article class="project-card" tabindex="0">
+          <figure class="project-media-placeholder">Hydraulic Modeling</figure>
+          <div class="card-content">
+            <h3>Urban Stormwater Mitigation</h3>
+            <p>Created flood inundation maps and drainage design using HEC‑RAS 2D for a major watershed.</p>
+            <div class="project-tags">
+                <span class="tag tag-water">Computational Hydrology</span>
+                <span class="tag tag-tool">HEC-RAS 2D</span>
+            </div>
+            <a href="project-3.md" class="read-more-link">Read Case Study <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
       <div class="text-center" style="margin-top: 2rem;">
          <a class="btn secondary-btn" href="projects.html">View All 6+ Projects</a>
       </div>
@@ -103,39 +113,36 @@
     <section id="expertise" class="container section-padding expertise-section">
       <h2 class="section-title">Technical Expertise **& Competencies**</h2>
       <div class="expertise-grid">
-        
-        <div id="skills" class="skill-area">
+        <div class="skill-area">
           <h3><i class="fas fa-terminal"></i> **Software Proficiency**</h3>
           <ul class="tags software-tags">
             <li>ETABS & SAP2000 (Advanced)</li>
-            <li>**Autodesk Civil 3D** (Modeling & Grading)</li>
-            <li>HEC‑RAS (2D Modeling)</li>
+            <li>Autodesk Civil 3D (Modeling & Grading)</li>
+            <li>HEC‑RAS (1D/2D Modeling)</li>
             <li>AutoCAD & Revit Structure</li>
-            <li>QGIS & ArcGIS (Spatial Analysis)</li>
-            <li>MATLAB/Python (Basic scripting for data)</li>
+            <li>QGIS & ArcGIS</li>
+            <li>MATLAB/Python (Scripting)</li>
           </ul>
         </div>
         
-        <div id="experience" class="skill-area">
+        <div class="skill-area">
           <h3><i class="fas fa-medal"></i> **Key Competencies & Codes**</h3>
           <ul class="focus-list">
             <li>**Structural:** Seismic design principles (ASCE/UBC), Concrete (ACI), Steel (AISC).</li>
-            <li>**Hydrology:** 1D/2D hydraulic modeling, Stormwater quality design, EPA SWMM.</li>
-            <li>**Geotech:** Shallow/Deep Foundation design (Basic), Soil Mechanics interpretation.</li>
-            <li>**A11y/UX:** Strong technical documentation and visualization skills.</li>
+            <li>**Hydrology:** Stormwater quality design, EPA SWMM, Unit Hydrograph Analysis.</li>
+            <li>**Transportation:** AASHTO Geometric standards, LOS Analysis, Pavement Design.</li>
           </ul>
         </div>
-        
       </div>
     </section>
     
     <section id="about" class="container section-padding about-section">
       <h2 class="section-title">About Muhammad **& Professional Growth**</h2>
       <div class="about-content">
-        <img src="assets/img/profile.jpg" alt="Professional portrait of Muhammad Ilyas" class="profile-photo-placeholder" loading="lazy">
+        <div class="profile-photo-placeholder">Profile Photo</div>
         <div>
-          <p>As a driven final-year Civil Engineering student, I focus on applying **computational methods** to solve critical infrastructure deficiencies. My experience includes two internships—one at **[Company Name, e.g., Arup/Jacobs]** focusing on **BIM coordination** and another with a municipality where I contributed to **pavement condition index (PCI)** modeling.</p>
-          <p>I am actively involved in the **ASCE Student Chapter** and hold certifications in **FE Exam Readiness** and **[Specific Software Certification]**. My portfolio reflects my commitment to delivering technical excellence and clear, actionable engineering reports.</p>
+          <p>I am a driven final-year Civil Engineering student focusing on **computational methods** for structural and hydraulic systems. My practical experience includes internships at **[Company Name]** where I focused on **BIM coordination** and **pavement condition index (PCI)** modeling.</p>
+          <p>I am actively involved in the **ASCE Student Chapter** and hold certifications in **FE Exam Readiness** and **[Specific Software Certification]**. My commitment is to delivering technical excellence and clear, actionable engineering reports.</p>
         </div>
       </div>
     </section>
@@ -144,7 +151,7 @@
       <h2 class="section-title">Let's Discuss Your Next **Infrastructure Project**</h2>
       <p class="contact-pitch">I am seeking entry-level structural or transportation engineering roles. For opportunities or technical inquiries, please connect.</p>
       
-      <form action="[Form Submission Endpoint]" method="POST" class="contact-form">
+      <form action="[Form Submission Endpoint like Formspree]" method="POST" class="contact-form">
           <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
           <input type="email" name="email" placeholder="Your Email Address" required aria-label="Your Email Address">
           <textarea name="message" rows="5" placeholder="Your Message/Inquiry" required aria-label="Your Message/Inquiry"></textarea>
@@ -161,13 +168,12 @@
 
   <footer class="site-footer">
     <div class="container footer-content">
-      <p>© <span id="year"></span> Muhammad Ilyas | Civil Engineering Portfolio</p>
-      <p class="credit">Powered by Vanilla JS & Semantic HTML5</p>
+      <p>&copy; <span id="year"></span> Muhammad Ilyas | Civil Engineering Portfolio</p>
+      <p class="credit">Built with Semantic HTML5 & Vanilla JS</p>
     </div>
   </footer>
 
   <script src="assets/js/main.js"></script>
 </body>
 </html>
-
 
