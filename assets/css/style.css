@@ -1,558 +1,151 @@
 /*
  * ---------------------------------------
- * 1. Global Reset and Variables (Theming)
+ * 1. Global Reset and Variables (Theming) - UPDATED
  * ---------------------------------------
  */
 :root {
-    /* Colors (Dark Mode Aesthetic) */
-    --color-background: #0d1117; /* GitHub Dark Blue/Black */
-    --color-surface: #161b22; /* Card/Header Surface */
-    --color-text-primary: #f0f6fc; /* Light text */
-    --color-text-secondary: #8b949e; /* Greyed out text */
-    --color-accent: #58a6ff; /* GitHub Blue for Highlight */
-    --color-accent-dark: #3069a1;
-    --color-border: #30363d;
+    /* ... existing color variables ... */
+    --color-surface: #1e2129; /* Slightly lighter surface for contrast */
+    --color-border: #353b47;
 
-    /* Typography */
-    --font-primary: 'Inter', sans-serif;
-    --font-mono: 'Roboto Mono', monospace;
-    --font-size-base: 1.125rem;
-    
-    /* Spacing */
-    --space-sm: 0.5rem;
-    --space-md: 1rem;
-    --space-lg: 2rem;
-    --space-xl: 4rem;
-    
-    /* Transitions */
-    --transition-speed: 0.3s;
+    /* NEW AESTHETIC VARIABLES */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.4);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.6);
+
+    /* ... existing typography variables ... */
 }
 
-/* Light Mode Variables (Advanced Feature, controlled by JavaScript) */
 body.light-mode {
-    --color-background: #ffffff;
-    --color-surface: #f0f0f0;
-    --color-text-primary: #24292f;
-    --color-text-secondary: #656d76;
-    --color-accent: #0585f2;
-    --color-accent-dark: #0056b3;
-    --color-border: #d0d7de;
+    /* ... existing light mode color variables ... */
+    --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: var(--font-primary);
-    font-size: var(--font-size-base);
-    line-height: 1.6;
-    background-color: var(--color-background);
-    color: var(--color-text-primary);
-    min-height: 100vh;
-    transition: background-color var(--transition-speed), color var(--transition-speed);
-}
-
-/* Skip Link for Accessibility */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--color-accent);
-    color: var(--color-background);
-    padding: var(--space-md);
-    z-index: 999;
-}
-.skip-link:focus {
-    top: 0;
-}
+/* ... existing general body/html styles ... */
 
 /* * ---------------------------------------
- * 2. Typography and Section Headers
- * ---------------------------------------
- */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--space-lg);
-}
-
-.section-padding {
-    padding: var(--space-xl) 0;
-}
-
-h1, h2, h3 {
-    line-height: 1.2;
-    font-weight: 700;
-    color: var(--color-text-primary);
-}
-
-h1 { font-size: 4rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 1.5rem; }
-
-.section-title {
-    margin-bottom: var(--space-lg);
-    border-left: 5px solid var(--color-accent);
-    padding-left: var(--space-md);
-    display: inline-block;
-    font-weight: 800;
-}
-
-.section-title strong, .main-headline strong {
-    color: var(--color-accent);
-    font-weight: inherit;
-}
-
-/* * ---------------------------------------
- * 3. Header and Navigation
+ * 2. Header and Navigation - UPDATED
  * ---------------------------------------
  */
 .site-header {
-    background-color: var(--color-surface);
-    padding: var(--space-md) 0;
+    /* ... existing styles ... */
     border-bottom: 1px solid var(--color-border);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.nav-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.75rem;
-    font-weight: 800;
-    color: var(--color-text-primary);
-    text-decoration: none;
-}
-
-nav a {
-    color: var(--color-text-secondary);
-    text-decoration: none;
-    margin-left: var(--space-lg);
-    padding: 0.5rem 0;
-    transition: color var(--transition-speed);
-    position: relative;
-}
-
-nav a:hover, nav a.active {
-    color: var(--color-accent);
-}
-
-nav a:hover::after, nav a.active::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 100%;
-    height: 3px;
-    background-color: var(--color-accent);
-    transform: scaleX(1);
-}
-
-nav a i {
-    margin-right: 5px;
-    color: var(--color-accent-dark);
-}
-
-.theme-toggle-btn {
-    background: none;
-    border: none;
-    color: var(--color-text-primary);
-    font-size: 1.25rem;
-    cursor: pointer;
-    margin-left: var(--space-lg);
-    transition: color var(--transition-speed);
-}
-.theme-toggle-btn:hover {
-    color: var(--color-accent);
+    /* Remove box-shadow here, rely on container shadow or keep it minimal */
 }
 
 /* * ---------------------------------------
- * 4. Buttons and Links
+ * 3. Buttons and Links - UPDATED
  * ---------------------------------------
  */
 .btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
-    border: 2px solid transparent;
-    border-radius: 6px;
-    cursor: pointer;
-    text-decoration: none;
-    font-weight: 700;
-    transition: all var(--transition-speed);
+    /* ... existing styles ... */
+    border-radius: var(--radius-sm); /* Apply rounded edges */
+    font-size: 0.95rem; /* Tweak font size for balance */
 }
 
 .primary-btn {
-    background-color: var(--color-accent);
-    color: var(--color-background);
+    /* ... existing styles ... */
+    box-shadow: 0 4px 10px rgba(88, 166, 255, 0.3); /* Subtle accent shadow */
 }
 
 .primary-btn:hover {
-    background-color: transparent;
-    color: var(--color-accent);
-    border-color: var(--color-accent);
-    transform: translateY(-2px);
-}
-
-.secondary-btn {
-    background-color: var(--color-surface);
-    color: var(--color-accent);
-    border-color: var(--color-accent-dark);
-}
-
-.secondary-btn:hover {
-    background-color: var(--color-accent-dark);
-    color: var(--color-text-primary);
-    transform: translateY(-2px);
-}
-
-.large-btn {
-    padding: 1rem 2rem;
-    font-size: 1.125rem;
-}
-
-.secondary-link {
-    color: var(--color-accent);
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.secondary-link:hover {
-    text-decoration: underline;
-}
-
-.text-center {
-    text-align: center;
+    /* ... existing styles ... */
+    transform: scale(1.03); /* Added micro-interaction */
 }
 
 /* * ---------------------------------------
- * 5. Hero Section
+ * 4. Hero Section - UPDATED
  * ---------------------------------------
  */
-.hero {
-    padding: 6rem 0;
-    text-align: center;
-}
-
-.role-tag {
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: var(--color-accent);
-    margin-bottom: var(--space-sm);
-    font-family: var(--font-mono);
-}
-
 .main-headline {
-    margin-bottom: var(--space-md);
+    /* Remove the strong style, rely on color */
+    font-weight: 800;
 }
-
-.hero-summary {
-    max-width: 900px;
-    margin: 0 auto var(--space-lg) auto;
-    font-size: 1.35rem;
-    color: var(--color-text-secondary);
+.main-headline strong {
+    color: var(--color-accent);
+    font-weight: inherit; /* Inherit font weight */
 }
-
-.hero-cta {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-lg);
-    margin-top: var(--space-lg);
-    align-items: center;
-}
-
-.tool-ticker {
-    margin-top: var(--space-xl);
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-    color: var(--color-accent-dark);
+/* New style for the tool ticker to look like modern badges */
+.tool-ticker span {
+    background-color: var(--color-surface);
+    padding: 8px 16px;
+    border-radius: var(--radius-md); /* Rounded badges */
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-soft);
 }
 
 /* * ---------------------------------------
- * 6. Featured Projects (CSS Grid)
+ * 5. Featured Projects (Grid Layout) - UPDATED
  * ---------------------------------------
  */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--space-lg);
-}
-
 .project-card {
     background-color: var(--color-surface);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    border-radius: var(--radius-md); /* Softer corners */
+    box-shadow: var(--shadow-soft); /* Soft shadow */
+    border: 1px solid transparent; /* Prepare for focus border */
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px var(--color-accent-dark);
+    box-shadow: var(--shadow-hover); /* Deeper shadow on hover */
+    border-color: var(--color-accent-dark); /* Highlight border on hover */
+}
+
+.project-card:focus-within { /* Accessibility: Focus state */
+    border-color: var(--color-accent);
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    box-shadow: var(--shadow-hover);
 }
 
 .project-media-placeholder {
-    height: 180px;
-    background-color: var(--color-accent-dark);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-background);
-    font-family: var(--font-mono);
-    font-size: 1.1rem;
-    font-weight: 700;
-    border-bottom: 3px solid var(--color-accent);
+    /* ... existing styles ... */
+    border-top-left-radius: var(--radius-md); /* Match card radius */
+    border-top-right-radius: var(--radius-md);
+    /* Remove border-bottom property here, let padding handle separation */
+    border-bottom: none;
+    padding-bottom: 0;
 }
-
 .card-content {
     padding: var(--space-lg);
 }
 
-.project-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: var(--space-sm);
-}
-
-.project-card p {
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-md);
-}
-
-.project-tags {
-    margin-bottom: var(--space-md);
-}
-
-.tag {
-    display: inline-block;
-    font-size: 0.8rem;
-    font-family: var(--font-mono);
-    padding: 4px 8px;
-    border-radius: 4px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    font-weight: 500;
-}
-
-.tag-structural { background-color: #795548; color: #fff; } /* Brown */
-.tag-transportation { background-color: #4caf50; color: #fff; } /* Green */
-.tag-water { background-color: #03a9f4; color: #fff; } /* Light Blue */
-.tag-tool { background-color: var(--color-accent-dark); color: var(--color-text-primary); }
-
-.read-more-link {
-    color: var(--color-accent);
-    text-decoration: none;
-    font-weight: 700;
-    transition: padding-left var(--transition-speed);
-}
-.read-more-link:hover {
-    padding-left: 5px;
-}
-.read-more-link i {
-    margin-left: 5px;
-}
-
 /* * ---------------------------------------
- * 7. Expertise Section (CSS Grid)
+ * 6. Expertise Section - UPDATED
  * ---------------------------------------
  */
 .expertise-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: var(--space-xl);
-    background-color: var(--color-surface);
-    padding: var(--space-xl);
-    border-radius: 8px;
-}
-
-.skill-area h3 {
-    margin-bottom: var(--space-md);
-    color: var(--color-accent);
-}
-
-.software-tags {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-sm);
-}
-
-.software-tags li {
-    padding: 8px 12px;
-    background-color: var(--color-background);
-    border: 1px solid var(--color-border);
-    border-radius: 4px;
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-    color: var(--color-text-primary);
-}
-
-.focus-list {
-    list-style: none;
+    /* ... existing styles ... */
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
 }
 
 .focus-list li {
-    padding: var(--space-md);
-    border-left: 4px solid var(--color-accent);
-    margin-bottom: var(--space-md);
-    border-radius: 4px;
-    background-color: var(--color-background);
-    border: 1px solid var(--color-border);
+    /* ... existing styles ... */
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-speed);
 }
-
-.focus-list li strong {
-    color: var(--color-accent);
-    font-weight: 700;
-    margin-right: var(--space-sm);
-}
-
-
-/* * ---------------------------------------
- * 8. About Section
- * ---------------------------------------
- */
-.about-content {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: var(--space-xl);
-    align-items: flex-start;
-}
-
-.profile-photo-placeholder {
-    width: 200px;
-    height: 200px;
-    background-color: var(--color-accent-dark);
-    border-radius: 50%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 5px solid var(--color-accent);
-    color: var(--color-background);
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-    flex-shrink: 0;
-    text-align: center;
+.focus-list li:hover {
+    background-color: var(--color-border); /* Subtle hover feedback */
 }
 
 /* * ---------------------------------------
- * 9. Contact Section & Form
+ * 7. Contact Section & Form - UPDATED
  * ---------------------------------------
  */
-.contact-pitch {
-    font-size: 1.25rem;
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-lg);
-}
-
-.contact-form {
-    display: grid;
-    gap: var(--space-md);
-    max-width: 600px;
-    margin-bottom: var(--space-xl);
-}
-
 .contact-form input, .contact-form textarea {
-    padding: var(--space-md);
-    border: 1px solid var(--color-border);
-    border-radius: 4px;
-    background-color: var(--color-background);
-    color: var(--color-text-primary);
-    font-size: 1rem;
-    transition: border-color var(--transition-speed);
+    /* ... existing styles ... */
+    border-radius: var(--radius-sm); /* Rounded inputs */
 }
-
-.contact-form input:focus, .contact-form textarea:focus {
-    border-color: var(--color-accent);
-    outline: none;
-}
-
 .submit-btn {
-    width: 100%;
+    box-shadow: var(--shadow-soft);
 }
-
-.contact-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-lg);
-}
-
 .contact-item {
-    font-size: 1.125rem;
-    color: var(--color-text-primary);
-    text-decoration: none;
-    transition: color var(--transition-speed);
+    transition: transform var(--transition-speed);
 }
-
 .contact-item:hover {
     color: var(--color-accent);
-}
-
-.contact-item i {
-    margin-right: 8px;
-    color: var(--color-accent);
-}
-
-/* * ---------------------------------------
- * 10. Footer
- * ---------------------------------------
- */
-.site-footer {
-    background-color: var(--color-surface);
-    padding: var(--space-md) 0;
-    border-top: 1px solid var(--color-border);
-    color: var(--color-text-secondary);
-    font-size: 0.9rem;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.credit {
-    font-family: var(--font-mono);
-}
-
-/* * ---------------------------------------
- * 11. Responsiveness
- * ---------------------------------------
- */
-@media (max-width: 992px) {
-    h1 { font-size: 3rem; }
-    .nav-bar nav { display: none; /* Hide navigation on smaller screens for simplicity */ }
-    .nav-bar { justify-content: space-around; }
-    .theme-toggle-btn { margin: 0; }
-    .expertise-grid { padding: var(--space-lg); }
-    .about-content { grid-template-columns: 1fr; text-align: center; }
-    .profile-photo-placeholder { margin: 0 auto var(--space-md) auto; }
-}
-
-@media (max-width: 768px) {
-    .container { padding: 0 var(--space-md); }
-    h1 { font-size: 2.25rem; }
-    h2 { font-size: 2rem; }
-    .hero-summary { font-size: 1rem; }
-    .hero-cta { flex-direction: column; gap: var(--space-md); }
-    .secondary-link { margin-left: 0; }
-    .expertise-grid { grid-template-columns: 1fr; gap: var(--space-lg); }
-    .footer-content { flex-direction: column; gap: var(--space-sm); text-align: center; }
-    .tool-ticker { flex-direction: column; gap: 0.5rem; }
-    .featured { padding: 2rem 0; }
+    transform: translateX(5px); /* Micro-interaction on link */
 }
