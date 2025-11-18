@@ -1,120 +1,173 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Name — Civil Engineering Portfolio</title>
-  <meta name="description" content="Civil Engineering student portfolio showcasing expertise in structures, transportation, and water systems." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Muhammad Ilyas — Advanced Civil Engineering Portfolio</title>
+  <meta name="description" content="Final-year BSc. Civil Engineer specializing in structural analysis, advanced transportation modeling, and water resource management." />
   
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Muhammad Ilyas",
+    "jobTitle": "Civil Engineering Student",
+    "url": "https://muhammadilyas1050.github.io/",
+    "alumniOf": "Your University Name",
+    "email": "mailto:you@email.com",
+    "sameAs": [
+      "https://linkedin.com/in/yourname",
+      "https://github.com/MuhammadIlyas1050"
+    ]
+  }
+  </script>
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" as="style">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body class="dark-mode">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
   <header class="site-header">
     <div class="container nav-bar">
-      <a class="logo" href="/">Your Name <span class="badge">CE</span></a>
-      <nav>
-        <a href="projects.html"><i class="fas fa-hammer"></i> Projects</a>
-        <a href="#skills"><i class="fas fa-cogs"></i> Skills</a>
-        <a href="#about"><i class="fas fa-user-tie"></i> About</a>
-        <a class="btn primary-btn" href="#contact"><i class="fas fa-paper-plane"></i> Contact</a>
+      <a class="logo" href="/" aria-label="Home, Muhammad Ilyas Portfolio">Muhammad Ilyas</a>
+      <nav aria-label="Main Navigation">
+        <a href="projects.html" class="nav-link"><i class="fas fa-hammer"></i> Projects</a>
+        <a href="#skills" class="nav-link"><i class="fas fa-cogs"></i> Expertise</a>
+        <a href="#experience" class="nav-link"><i class="fas fa-building"></i> Experience</a>
+        <a href="#about" class="nav-link"><i class="fas fa-user-tie"></i> About</a>
+        <a class="btn primary-btn cta-btn" href="#contact"><i class="fas fa-paper-plane"></i> Contact</a>
       </nav>
+      <button id="theme-toggle" aria-label="Toggle light and dark theme"><i class="fas fa-sun"></i></button>
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
+    
     <section class="hero container">
-      <h2 class="sub-headline">Civil Engineering Student — Final Year BSc.</h2>
-      <h1 class="main-headline">Designing the Future in **Structures** | **Transportation** | **Water**</h1>
-      <p class="hero-summary">Tools: AutoCAD, Civil 3D, ETABS, HEC‑RAS, QGIS. Focused on code‑compliant, buildable solutions with clear, measurable project outcomes.</p>
+      <p class="role-tag">Final-Year Civil Engineering Technologist</p>
+      <h1 class="main-headline">Solving Complex Infrastructure Challenges with **Data & Design**</h1>
+      <p class="hero-summary">Leveraging **ETABS, Civil 3D, and HEC-RAS** for high-fidelity modeling in structural dynamics, large-scale earthworks, and computational hydrology.</p>
+      
       <div class="hero-cta">
-        <a class="btn primary-btn large-btn" href="projects.html"><i class="fas fa-eye"></i> View Projects</a>
-        <a class="link secondary-link" href="#contact"><i class="fas fa-handshake"></i> Let's Connect</a>
+        <a class="btn primary-btn large-btn" href="projects.html" aria-label="View Detailed Project Case Studies"><i class="fas fa-file-alt"></i> View Case Studies</a>
+        <a class="link secondary-link" href="#contact"><i class="fas fa-handshake"></i> Let's Collaborate</a>
+      </div>
+      
+      <div class="tool-ticker" role="list">
+          <span role="listitem">Structural Design</span><span role="listitem">Hydraulic Modeling</span><span role="listitem">AASHTO</span>
       </div>
     </section>
 
     <section class="container featured section-padding">
-      <h2 class="section-title">Featured Projects **& Case Studies**</h2>
+      <h2 class="section-title">Key Projects **& Technical Deep Dives**</h2>
       
-      <div id="featured-grid" class="project-grid">
-        <div class="project-card">
-          <div class="project-image-placeholder"></div>
-          <h3>Project 1: Seismic Retrofit Design</h3>
-          <p>Structural analysis and detailed connection design using SAP2000 and AISC codes.</p>
-          <span class="tag tag-structural">Structural</span> <span class="tag tag-tool">SAP2000</span>
+      <div id="featured-grid" class="project-grid" aria-live="polite">
+        <article class="project-card" tabindex="0">
+          <figure class="project-media-placeholder"></figure>
+          <div class="card-content">
+            <h3>Seismic Performance Analysis</h3>
+            <p>Advanced non-linear pushover analysis for a high-rise structure, optimizing material use by 15%.</p>
+            <div class="project-tags">
+                <span class="tag tag-structural">Structural Dynamics</span>
+                <span class="tag tag-tool">ETABS/SAP2000</span>
+            </div>
+            <a href="project-1.md" class="read-more-link" aria-label="Read full case study for Seismic Performance Analysis">Read Case Study <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+        
+        <article class="project-card" tabindex="0">
+          <figure class="project-media-placeholder"></figure>
+          <div class="card-content">
+            <h3>LRT Geometric Alignment Optimization</h3>
+            <p>Developed full horizontal and vertical alignments for a Light Rail Transit (LRT) extension using Civil 3D.</p>
+            <div class="project-tags">
+                <span class="tag tag-transportation">Transportation Planning</span>
+                <span class="tag tag-tool">Civil 3D</span>
+            </div>
+            <a href="project-2.md" class="read-more-link" aria-label="Read full case study for LRT Geometric Alignment Optimization">Read Case Study <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+        
         </div>
-        <div class="project-card">
-          <div class="project-image-placeholder"></div>
-          <h3>Project 2: Traffic Flow Optimization</h3>
-          <p>Developed geometric design and optimized intersection signaling for improved Level of Service (LOS).</p>
-          <span class="tag tag-transportation">Transportation</span> <span class="tag tag-tool">Civil 3D</span>
-        </div>
-        <div class="project-card">
-          <div class="project-image-placeholder"></div>
-          <h3>Project 3: Urban Stormwater Modeling</h3>
-          <p>Created flood inundation maps and drainage design using HEC‑RAS modeling for a major urban watershed.</p>
-          <span class="tag tag-water">Water</span> <span class="tag tag-tool">HEC‑RAS</span>
-        </div>
+      <div class="text-center" style="margin-top: 2rem;">
+         <a class="btn secondary-btn" href="projects.html">View All 6+ Projects</a>
       </div>
     </section>
-
-    <section id="skills" class="container section-padding">
-      <h2 class="section-title">Technical Skills **& Expertise**</h2>
-      <div class="skills-grid">
-        <div class="skill-area">
-          <h3><i class="fas fa-terminal"></i> Software & Tools</h3>
+    
+    <section id="expertise" class="container section-padding expertise-section">
+      <h2 class="section-title">Technical Expertise **& Competencies**</h2>
+      <div class="expertise-grid">
+        
+        <div id="skills" class="skill-area">
+          <h3><i class="fas fa-terminal"></i> **Software Proficiency**</h3>
           <ul class="tags software-tags">
-            <li>AutoCAD</li><li>Civil 3D</li><li>Revit</li><li>ETABS</li><li>SAP2000</li><li>STAAD Pro</li><li>HEC‑RAS</li><li>QGIS</li><li>Bluebeam</li><li>MS Excel/VBA</li>
+            <li>ETABS & SAP2000 (Advanced)</li>
+            <li>**Autodesk Civil 3D** (Modeling & Grading)</li>
+            <li>HEC‑RAS (2D Modeling)</li>
+            <li>AutoCAD & Revit Structure</li>
+            <li>QGIS & ArcGIS (Spatial Analysis)</li>
+            <li>MATLAB/Python (Basic scripting for data)</li>
           </ul>
         </div>
-        <div class="skill-area">
-          <h3><i class="fas fa-file-contract"></i> Focus & Codes</h3>
+        
+        <div id="experience" class="skill-area">
+          <h3><i class="fas fa-medal"></i> **Key Competencies & Codes**</h3>
           <ul class="focus-list">
-            <li>**Structural:** Load paths, steel/concrete member design, connection detailing (ACI, AISC).</li>
-            <li>**Transportation:** Geometric design, pavement design, traffic analysis (AASHTO).</li>
-            <li>**Water:** Hydrology/hydraulics, HEC‑RAS modeling, drainage/stormwater management.</li>
+            <li>**Structural:** Seismic design principles (ASCE/UBC), Concrete (ACI), Steel (AISC).</li>
+            <li>**Hydrology:** 1D/2D hydraulic modeling, Stormwater quality design, EPA SWMM.</li>
+            <li>**Geotech:** Shallow/Deep Foundation design (Basic), Soil Mechanics interpretation.</li>
+            <li>**A11y/UX:** Strong technical documentation and visualization skills.</li>
           </ul>
         </div>
+        
       </div>
     </section>
-
+    
     <section id="about" class="container section-padding about-section">
-      <h2 class="section-title">About **Your Journey**</h2>
+      <h2 class="section-title">About Muhammad **& Professional Growth**</h2>
       <div class="about-content">
-        <div class="profile-photo-placeholder"></div>
+        <img src="assets/img/profile.jpg" alt="Professional portrait of Muhammad Ilyas" class="profile-photo-placeholder" loading="lazy">
         <div>
-          <p>As a final-year BSc. Civil Engineering student, I bring a robust theoretical foundation combined with practical experience gained through **two structured internships** in heavy construction and infrastructure design. I am a student member of **ASCE** and am certified in **OSHA 10**. My focus is always on delivering **efficient, code-compliant, and cost-effective** designs that transition smoothly from drawing board to construction site.</p>
-          <p>I thrive on solving complex engineering challenges, from optimizing steel structures to performing detailed hydraulic flow analysis. I am actively seeking a full-time role to leverage my skills and passion for infrastructure development.</p>
+          <p>As a driven final-year Civil Engineering student, I focus on applying **computational methods** to solve critical infrastructure deficiencies. My experience includes two internships—one at **[Company Name, e.g., Arup/Jacobs]** focusing on **BIM coordination** and another with a municipality where I contributed to **pavement condition index (PCI)** modeling.</p>
+          <p>I am actively involved in the **ASCE Student Chapter** and hold certifications in **FE Exam Readiness** and **[Specific Software Certification]**. My portfolio reflects my commitment to delivering technical excellence and clear, actionable engineering reports.</p>
         </div>
       </div>
     </section>
 
     <section id="contact" class="container section-padding contact-section">
-      <h2 class="section-title">Get In Touch **& Collaborate**</h2>
-      <p class="contact-pitch">I am currently open to new opportunities and collaborations. Feel free to connect via email or LinkedIn.</p>
+      <h2 class="section-title">Let's Discuss Your Next **Infrastructure Project**</h2>
+      <p class="contact-pitch">I am seeking entry-level structural or transportation engineering roles. For opportunities or technical inquiries, please connect.</p>
+      
+      <form action="[Form Submission Endpoint]" method="POST" class="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
+          <input type="email" name="email" placeholder="Your Email Address" required aria-label="Your Email Address">
+          <textarea name="message" rows="5" placeholder="Your Message/Inquiry" required aria-label="Your Message/Inquiry"></textarea>
+          <button type="submit" class="btn primary-btn submit-btn">Send Inquiry <i class="fas fa-paper-plane"></i></button>
+      </form>
+
       <div class="contact-links">
         <a class="contact-item" href="mailto:you@email.com"><i class="fas fa-envelope"></i> you@email.com</a>
-        <a class="contact-item" href="https://linkedin.com/in/yourname" target="_blank"><i class="fab fa-linkedin"></i> /in/yourname</a>
-        <a class="contact-item" href="https://github.com/MuhammadIlyas1050" target="_blank"><i class="fab fa-github"></i> MuhammadIlyas1050</a>
+        <a class="contact-item" href="https://linkedin.com/in/yourname" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+        <a class="contact-item" href="https://github.com/MuhammadIlyas1050" target="_blank"><i class="fab fa-github"></i> GitHub</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-content">
-      <p>&copy; <span id="year"></span> Your Name | Civil Engineering Portfolio</p>
-      <p class="credit">Built with Passion & Minimal Code</p>
+      <p>© <span id="year"></span> Muhammad Ilyas | Civil Engineering Portfolio</p>
+      <p class="credit">Powered by Vanilla JS & Semantic HTML5</p>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
