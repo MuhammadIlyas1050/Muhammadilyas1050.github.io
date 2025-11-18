@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Your Name</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="/">Your Name</a>
+      <nav>
+        <a class="active" href="projects.html">Projects</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#about">About</a>
+        <a class="btn" href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="container">
+    <h1>Projects</h1>
+    <div class="filters">
+      <button data-filter="all" class="chip active">All</button>
+      <button data-filter="Structures" class="chip">Structures</button>
+      <button data-filter="Transportation" class="chip">Transportation</button>
+      <button data-filter="Water" class="chip">Water</button>
+      <button data-filter="Geotechnical" class="chip">Geotechnical</button>
+    </div>
+    <div id="projects-grid" class="grid"></div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Your Name</p>
+    </div>
+  </footer>
+
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
