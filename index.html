@@ -1,180 +1,585 @@
-<!doctype html>
-<html lang="en" data-theme="dark">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>Muhammad Ilyas — Advanced Civil Engineering Portfolio</title>
-  <meta name="description" content="Final-year BSc. Civil Engineer specializing in structural analysis, advanced transportation modeling, and water resource management." />
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Muhammad Ilyas",
-    "jobTitle": "Civil Engineering Student",
-    "url": "https://muhammadilyas1050.github.io/",
-    "email": "mailto:you@email.com",
-    "sameAs": [
-      "https://linkedin.com/in/yourname",
-      "https://github.com/MuhammadIlyas1050"
-    ]
-  }
-  </script>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
-  <link rel="stylesheet" href="assets/css/style.css" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Muhammad Ilyas Bacha — BIM & Civil Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg: #050505;
+  --bg-surface: rgba(255, 255, 255, 0.03);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(0, 229, 255, 0.4);
+  --text: #F0F0F0;
+  --muted: #888888;
+  --accent: #00E5FF;
+  --accent-glow: rgba(0, 229, 255, 0.2);
+  --secondary: #4318FF;
+  --white: #ffffff;
+}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Outfit', sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+  cursor:none;
+}
+
+/* BACKGROUND GLOW */
+.bg-orb {
+  position: fixed;
+  top: 30%; left: 50%;
+  width: 60vw; height: 60vw;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  filter: blur(100px);
+  animation: orbFloat 15s infinite ease-in-out alternate;
+  pointer-events: none;
+}
+@keyframes orbFloat {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  100% { transform: translate(-40%, -40%) scale(1.2); }
+}
+
+/* CURSOR */
+.cursor{
+  width:8px;height:8px;
+  background:var(--accent);
+  border-radius:50%;
+  position:fixed;top:0;left:0;
+  pointer-events:none;z-index:9998;
+  transform:translate(-50%,-50%);
+  transition:width 0.2s,height 0.2s;
+  box-shadow: 0 0 15px var(--accent);
+}
+.cursor-trail{
+  width:40px;height:40px;
+  border:1px solid rgba(0, 229, 255, 0.4);
+  border-radius:50%;
+  position:fixed;top:0;left:0;
+  pointer-events:none;z-index:9997;
+  transform:translate(-50%,-50%);
+  transition:all 0.1s linear;
+}
+body:has(a:hover) .cursor,
+body:has(button:hover) .cursor{width:20px;height:20px;background:var(--white);box-shadow: 0 0 20px var(--white);}
+body:has(a:hover) .cursor-trail,
+body:has(button:hover) .cursor-trail{width:60px;height:60px;border-color:var(--white);background:rgba(255,255,255,0.05);}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 4rem;height:80px;
+  transition:all 0.4s;
+  border-bottom: 1px solid transparent;
+}
+nav.scrolled{
+  background:rgba(5, 5, 5, 0.8);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{
+  font-family:'Space Grotesk', sans-serif;
+  font-size:20px;font-weight:700;
+  letter-spacing:0.02em;
+  color:var(--white);
+}
+.nav-logo span{color:var(--accent);}
+.nav-links{display:flex;gap:3rem;list-style:none;}
+.nav-links a{
+  font-size:12px;font-weight:500;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;
+  transition:color 0.3s;
+}
+.nav-links a:hover{color:var(--accent);}
+.nav-hire{
+  font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+  padding:12px 28px;
+  border:1px solid var(--border);
+  border-radius: 30px;
+  color:var(--white);text-decoration:none;
+  transition:all 0.3s;
+  background: var(--bg-surface);
+}
+.nav-hire:hover{
+  border-color:var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  justify-content:center;
+  padding:140px 4rem 6rem;
+  position:relative;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:10px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  margin-bottom:2rem;
+  width: max-content;
+}
+.hero-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.8);}}
+.hero-tag-text{
+  font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--muted);
+}
+
+.hero-title{
+  font-family:'Space Grotesk', sans-serif;
+  font-size:clamp(50px,8vw,110px);
+  font-weight:700;
+  line-height:1.05;
+  letter-spacing:-0.03em;
+  color:var(--white);
+  margin-bottom:2.5rem;
+  max-width: 1000px;
+}
+.hero-title span{
+  background: linear-gradient(90deg, var(--white), var(--muted));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-title em{
+  font-style:normal;
+  background: linear-gradient(90deg, var(--accent), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-bottom{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:3rem;
+  border-top: 1px solid var(--border);
+  padding-top: 3rem;
+}
+.hero-desc{
+  max-width:500px;font-size:16px;
+  color:var(--muted);line-height:1.7;
+}
+.hero-desc strong{color:var(--white);font-weight:500;}
+.btn-primary{
+  font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+  padding:16px 36px;
+  background:var(--white);color:var(--bg);
+  border-radius: 30px;
+  text-decoration:none;
+  transition:all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn-primary:hover{
+  background:var(--accent);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* TICKER */
+.ticker{
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  overflow:hidden;padding:20px 0;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(5px);
+}
+.ticker-inner{
+  display:flex;gap:0;
+  animation:ticker 25s linear infinite;
+  width:max-content;
+}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.ticker-item{
+  display:flex;align-items:center;gap:24px;
+  padding:0 24px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size:14px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--muted);white-space:nowrap;
+}
+.ticker-sep{color:var(--accent);}
+
+/* SECTIONS */
+.wrap{max-width:1300px;margin:0 auto;padding:0 4rem;}
+section{padding:10rem 0;}
+
+.sec-header{
+  margin-bottom:4rem;
+}
+.sec-num{
+  font-family: 'Space Grotesk', sans-serif;
+  font-size:14px;font-weight:600;letter-spacing:0.1em;
+  color:var(--accent);
+  display: block;
+  margin-bottom: 1rem;
+}
+.sec-title{
+  font-family:'Space Grotesk', sans-serif;
+  font-size:clamp(32px,5vw,56px);
+  font-weight:700;line-height:1.1;
+  color:var(--white);
+}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
+.about-text p{
+  font-size:18px;color:var(--muted);
+  line-height:1.8;margin-bottom:1.5rem;
+  font-weight:300;
+}
+.about-text p strong{color:var(--white);font-weight:500;}
+.about-stats{
+  display:grid;grid-template-columns:1fr 1fr;gap:20px;
+}
+.stat-box{
+  background:var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding:2.5rem 2rem;
+  transition:all 0.3s;
+  backdrop-filter: blur(10px);
+}
+.stat-box:hover{
+  border-color: var(--border-hover);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.stat-n{
+  font-family:'Space Grotesk', sans-serif;
+  font-size:48px;font-weight:700;
+  color:var(--white);line-height:1;
+  margin-bottom:1rem;
+}
+.stat-n span{color:var(--accent);font-size:24px;}
+.stat-l{
+  font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--muted);
+}
+
+/* SKILLS */
+.skills-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.skill-box{
+  background:var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding:3rem 2.5rem;
+  transition:all 0.3s;
+}
+.skill-box:hover{
+  border-color:var(--accent);
+  background: linear-gradient(180deg, rgba(0,229,255,0.05) 0%, transparent 100%);
+}
+.skill-icon{
+  font-size: 32px;
+  margin-bottom: 1.5rem;
+}
+.skill-title{
+  font-family:'Space Grotesk', sans-serif;
+  font-size:24px;font-weight:600;
+  color:var(--white);margin-bottom:1.5rem;
+}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{
+  font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
+  padding:8px 16px;
+  border:1px solid var(--border);
+  border-radius: 20px;
+  color:var(--muted);transition:all 0.3s;
+}
+.skill-box:hover .chip{border-color:rgba(255,255,255,0.2);color:var(--white);}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;}
+.proj-card{
+  background:var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding:3rem;
+  transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position:relative;
+  overflow:hidden;
+}
+.proj-card::before{
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--secondary));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.proj-card:hover{
+  transform: translateY(-10px);
+  border-color: var(--border-hover);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+.proj-card:hover::before{opacity: 1;}
+.proj-name{
+  font-family:'Space Grotesk', sans-serif;
+  font-size:28px;font-weight:700;
+  color:var(--white);
+  margin-bottom: 1rem;
+}
+.proj-info{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom: 2rem;}
+.proj-tags{display:flex;flex-wrap:wrap;gap:10px;}
+.proj-tag{
+  font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+  padding:6px 12px;background:rgba(255,255,255,0.05);color:var(--accent);
+  border-radius: 4px;
+}
+
+/* CONTACT */
+.contact-wrap{
+  background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(0,229,255,0.05) 100%);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 6rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.contact-wrap h2{
+  font-family:'Space Grotesk', sans-serif;
+  font-size:48px;font-weight:700;
+  color:var(--white);margin-bottom:1.5rem;
+}
+.contact-wrap p{
+  font-size: 18px; color: var(--muted); max-width: 600px; margin: 0 auto 3rem; line-height: 1.6;
+}
+
+/* FOOTER */
+footer{
+  padding:3rem 4rem;
+  border-top: 1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--muted);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  nav{padding:0 2rem;}
+  .nav-links{display:none;}
+  .hero{padding:120px 2rem 4rem;}
+  .hero-title{font-size:clamp(40px,12vw,60px);}
+  .hero-bottom{flex-direction:column;align-items:flex-start;}
+  .wrap{padding:0 2rem;}
+  .about-grid, .skills-wrap, .projects-grid{grid-template-columns:1fr;gap:2rem;}
+  .contact-wrap{padding: 4rem 2rem;}
+  footer{flex-direction:column;gap:1rem;text-align:center;}
+}
+</style>
 </head>
-<body class="dark-mode">
-  
-  <div id="progress-bar-container">
-    <div id="progress-bar"></div>
+<body>
+
+<div class="bg-orb"></div>
+<div class="cursor" id="cur"></div>
+<div class="cursor-trail" id="trail"></div>
+
+<nav id="nav">
+  <div class="nav-logo">M. Ilyas <span>Bacha</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-hire">Get in touch</a>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-tag">
+    <div class="hero-dot"></div>
+    <span class="hero-tag-text">BIM Engineer & Civil Engineering Student</span>
   </div>
-  
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  
-  <header class="site-header">
-    <div class="container nav-bar">
-      <a class="logo" href="/" aria-label="Home, Muhammad Ilyas Portfolio">Muhammad Ilyas</a>
-      <nav aria-label="Main Navigation">
-        <a href="projects.html" class="nav-link"><i class="fas fa-hammer"></i> Projects</a>
-        <a href="#expertise" class="nav-link"><i class="fas fa-cogs"></i> Expertise</a>
-        <a href="#about" class="nav-link"><i class="fas fa-user-tie"></i> About</a>
-        <a class="btn primary-btn cta-btn" href="#contact"><i class="fas fa-paper-plane"></i> Contact</a>
-      </nav>
-      <button id="theme-toggle" aria-label="Toggle light and dark theme" class="theme-toggle-btn"><i class="fas fa-sun"></i></button>
+
+  <h1 class="hero-title">
+    <span>Building Digital</span><br>
+    <span>Infrastructure &</span> <em>AI Solutions</em> </h1>
+
+  <div class="hero-bottom">
+    <p class="hero-desc">
+      <strong>Muhammad Ilyas Bacha</strong> — Final-year Civil Engineering student at UET Peshawar , specializing in advanced BIM, high-end 3D rendering , and the integration of Artificial Intelligence in structural tasks .
+    </p>
+    <a href="#projects" class="btn-primary">View My Work <span>→</span></a>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">Autodesk Revit<span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">AI / ML Integration<span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">AutoCAD Civil 3D<span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">High-End 3D Rendering<span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">ISO 19650<span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">One Click LCA<span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Virtual Reality<span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Autodesk Revit<span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">AI / ML Integration<span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">AutoCAD Civil 3D<span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">High-End 3D Rendering<span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">ISO 19650<span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">One Click LCA<span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Virtual Reality<span class="ticker-sep">✦</span></span>
+  </div>
+</div>
+
+<section id="about">
+<div class="wrap">
+  <div class="sec-header">
+    <span class="sec-num">01 // PROFILE</span>
+    <h2 class="sec-title">About Me</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I am a final-year Civil Engineering student at the <strong>University of Engineering & Technology (UET), Peshawar</strong>, with an expected graduation date in August 2027 .</p>
+      <p>My expertise bridges the gap between traditional engineering and modern digital workflows. I have over <strong>two years of professional experience in AutoCAD</strong> and one year utilizing <strong>Autodesk Revit</strong> .</p>
+      <p>Currently, I am deeply engaged in advanced Building Information Modeling (BIM) workflows and actively exploring the integration of <strong>Artificial Intelligence and Machine Learning</strong> for structural and architectural automation .</p>
     </div>
-  </header>
-
-  <main id="main-content">
-    
-    <section class="hero container">
-      <p class="role-tag">Final-Year Civil Engineering Technologist</p>
-      <h1 class="main-headline">Solving Complex Infrastructure Challenges with Data & Design</h1>
-      <p class="hero-summary">Leveraging **ETABS, Civil 3D, and HEC-RAS** for high-fidelity modeling in structural dynamics, large-scale earthworks, and computational hydrology.</p>
-      
-      <div class="hero-cta">
-        <a class="btn primary-btn large-btn" href="projects.html" aria-label="View Detailed Project Case Studies"><i class="fas fa-file-alt"></i> View Case Studies</a>
-        <a class="link secondary-link" href="#contact"><i class="fas fa-handshake"></i> Let's Collaborate</a>
-      </div>
-      
-      <div class="tool-ticker" role="list">
-          <span role="listitem">Structural Dynamics</span><span role="listitem">Hydraulic Modeling</span><span role="listitem">Transportation Planning</span>
-      </div>
-    </section>
-
-    <section class="container featured section-padding">
-      <h2 class="section-title">Key Projects & Technical Deep Dives</h2>
-      
-      <div id="featured-grid" class="project-grid">
-        <article class="project-card" tabindex="0">
-          <figure class="project-media-placeholder">Seismic Analysis</figure>
-          <div class="card-content">
-            <h3>Seismic Performance Analysis</h3>
-            <p>Non-linear pushover analysis for a high-rise structure, achieving 15% material optimization.</p>
-            <div class="project-tags">
-                <span class="tag tag-structural">Structural Dynamics</span>
-                <span class="tag tag-tool">ETABS/SAP2000</span>
-            </div>
-            <a href="project-1.md" class="read-more-link">Read Case Study <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-        
-        <article class="project-card" tabindex="0">
-          <figure class="project-media-placeholder">Geometric Design</figure>
-          <div class="card-content">
-            <h3>LRT Geometric Alignment Optimization</h3>
-            <p>Developed full horizontal and vertical alignments for a Light Rail Transit (LRT) extension.</p>
-            <div class="project-tags">
-                <span class="tag tag-transportation">Transportation Planning</span>
-                <span class="tag tag-tool">Civil 3D</span>
-            </div>
-            <a href="project-2.md" class="read-more-link">Read Case Study <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-        
-        <article class="project-card" tabindex="0">
-          <figure class="project-media-placeholder">Hydraulic Modeling</figure>
-          <div class="card-content">
-            <h3>Urban Stormwater Mitigation</h3>
-            <p>Created flood inundation maps and drainage design using HEC‑RAS 2D for a major watershed.</p>
-            <div class="project-tags">
-                <span class="tag tag-water">Computational Hydrology</span>
-                <span class="tag tag-tool">HEC-RAS 2D</span>
-            </div>
-            <a href="project-3.md" class="read-more-link">Read Case Study <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-      </div>
-      <div class="text-center" style="margin-top: 2rem;">
-         <a class="btn secondary-btn" href="projects.html">View All 6+ Projects</a>
-      </div>
-    </section>
-
-    <section id="expertise" class="container section-padding expertise-section">
-      <h2 class="section-title">Technical Expertise & Competencies</h2>
-      <div class="expertise-grid">
-        <div class="skill-area">
-          <h3 class="skill-title"><i class="fas fa-terminal"></i> Software Proficiency</h3>
-          <ul class="tags software-tags">
-            <li>ETABS & SAP2000 (Advanced)</li>
-            <li>Autodesk Civil 3D (Modeling & Grading)</li>
-            <li>HEC‑RAS (1D/2D Modeling)</li>
-            <li>AutoCAD & Revit Structure</li>
-            <li>QGIS & ArcGIS</li>
-            <li>MATLAB/Python (Scripting)</li>
-          </ul>
-        </div>
-        
-        <div class="skill-area">
-          <h3 class="skill-title"><i class="fas fa-medal"></i> Key Competencies & Codes</h3>
-          <ul class="focus-list">
-            <li>**Structural:** Seismic design principles (ASCE/UBC), Concrete (ACI), Steel (AISC).</li>
-            <li>**Hydrology:** Stormwater quality design, EPA SWMM, Unit Hydrograph Analysis.</li>
-            <li>**Transportation:** AASHTO Geometric standards, LOS Analysis, Pavement Design.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="container section-padding about-section">
-      <h2 class="section-title">About Muhammad & Professional Growth</h2>
-      <div class="about-content">
-        <div class="profile-photo-placeholder">Profile Photo</div>
-        <div>
-          <p>I am a driven final-year Civil Engineering student focusing on **computational methods** for structural and hydraulic systems. My practical experience includes internships at **[Company Name]** where I focused on **BIM coordination** and **pavement condition index (PCI)** modeling.</p>
-          <p>I am actively involved in the **ASCE Student Chapter** and hold certifications in **FE Exam Readiness** and **[Specific Software Certification]**. My commitment is to delivering technical excellence and clear, actionable engineering reports.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="container section-padding contact-section">
-      <h2 class="section-title">Let's Discuss Your Next Infrastructure Project</h2>
-      <p class="contact-pitch">I am seeking entry-level structural or transportation engineering roles. For opportunities or technical inquiries, please connect.</p>
-      
-      <form action="[Form Submission Endpoint like Formspree]" method="POST" class="contact-form">
-          <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
-          <input type="email" name="email" placeholder="Your Email Address" required aria-label="Your Email Address">
-          <textarea name="message" rows="5" placeholder="Your Message/Inquiry" required aria-label="Your Message/Inquiry"></textarea>
-          <button type="submit" class="btn primary-btn submit-btn">Send Inquiry <i class="fas fa-paper-plane"></i></button>
-      </form>
-
-      <div class="contact-links">
-        <a class="contact-item" href="mailto:you@email.com"><i class="fas fa-envelope"></i> you@email.com</a>
-        <a class="contact-item" href="https://linkedin.com/in/yourname" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
-        <a class="contact-item" href="https://github.com/MuhammadIlyas1050" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <p>&copy; <span id="year"></span> Muhammad Ilyas | Civil Engineering Portfolio</p>
-      <p class="credit">Built with Semantic HTML5 & Vanilla JS</p>
+    <div class="about-stats">
+      <div class="stat-box">
+        <div class="stat-n">2027</div>
+        <div class="stat-l">Graduation (UET Peshawar)</div> </div>
+      <div class="stat-box">
+        <div class="stat-n">2<span>+</span></div>
+        <div class="stat-l">Years AutoCAD Exp.</div> </div>
+      <div class="stat-box">
+        <div class="stat-n">Lvl 3</div>
+        <div class="stat-l">ISO 19650 Expert</div> </div>
+      <div class="stat-box">
+        <div class="stat-n">4K</div>
+        <div class="stat-l">Cinematic 3D Rendering</div> </div>
     </div>
-  </footer>
+  </div>
+</div>
+</section>
 
-  <script src="assets/js/main.js"></script>
+<section id="skills">
+<div class="wrap">
+  <div class="sec-header">
+    <span class="sec-num">02 // CAPABILITIES</span>
+    <h2 class="sec-title">Skills & Tech Stack</h2>
+  </div>
+  <div class="skills-wrap">
+    <div class="skill-box">
+      <div class="skill-icon">🏗️</div>
+      <div class="skill-title">BIM & CAD</div>
+      <div class="chips">
+        <span class="chip">AutoCAD (2+ Yrs)</span> <span class="chip">Autodesk Revit</span> <span class="chip">Civil 3D</span>
+        <span class="chip">Clash Detection</span>
+      </div>
+    </div>
+    <div class="skill-box">
+      <div class="skill-icon">🤖</div>
+      <div class="skill-title">Tech & AI Integration</div> <div class="chips">
+        <span class="chip">Machine Learning</span> <span class="chip">Virtual Reality (VR)</span> <span class="chip">High-End 3D Rendering</span> <span class="chip">Autonomous Design Tools</span> </div>
+    </div>
+    <div class="skill-box">
+      <div class="skill-icon">📜</div>
+      <div class="skill-title">Certifications</div>
+      <div class="chips">
+        <span class="chip">ISO 19650 Info Management</span> <span class="chip">One Click LCA for Revit</span> <span class="chip">Level 3 Expert Status</span> </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="projects">
+<div class="wrap">
+  <div class="sec-header">
+    <span class="sec-num">03 // SELECTED WORK</span>
+    <h2 class="sec-title">Featured Projects</h2>
+  </div>
+  <div class="projects-grid">
+    <div class="proj-card">
+      <div class="proj-name">BIM-based Structural Monitoring</div> <div class="proj-info">My Final Year Project at UET Peshawar focusing on integrating advanced Virtual Reality (VR) applications with BIM models for enhanced structural health monitoring and visualization. </div>
+      <div class="proj-tags">
+        <span class="proj-tag">Revit</span>
+        <span class="proj-tag">Virtual Reality</span>
+        <span class="proj-tag">Academic Research</span>
+      </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-name">Apex Civil</div> <div class="proj-name" style="font-size: 16px; color: var(--accent); margin-top: -10px;">Digital Education Platform</div>
+      <div class="proj-info">A professional digital presence and YouTube channel dedicated to engineering education, software tutorials, and freelance professional engineering services. </div>
+      <div class="proj-tags">
+        <span class="proj-tag">Content Creation</span>
+        <span class="proj-tag">Engineering Education</span>
+        <span class="proj-tag">Brand Management</span>
+      </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-name">Drivelo & Digital Darzi</div> <div class="proj-info">Developed prototype mobile and web applications, including a localized ride-management system for drivers (Drivelo) and a digital management tool tailored for tailor businesses. </div>
+      <div class="proj-tags">
+        <span class="proj-tag">App Development</span>
+        <span class="proj-tag">UI/UX</span>
+        <span class="proj-tag">Software Prototyping</span>
+      </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-name">Ultra-Realistic Architecture Viz</div> <div class="proj-info">Leveraging AI generation tools to create high-end, cinematic, and minimalist 4K 3D renderings for modern residential villas and commercial spaces. </div>
+      <div class="proj-tags">
+        <span class="proj-tag">AI Tools</span>
+        <span class="proj-tag">4K Rendering</span>
+        <span class="proj-tag">Architectural Visualization</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="contact">
+<div class="wrap">
+  <div class="contact-wrap">
+    <h2>Let's Build the Future</h2>
+    <p>I am currently planning for post-graduation opportunities, specifically looking toward engineering roles in Gulf countries or pursuing a Master's degree in Germany . Open to exciting freelance projects and academic collaborations.</p>
+    <a href="https://www.linkedin.com/in/muhammad-ilyas-bacha-679965316/" target="_blank" class="btn-primary">Connect on LinkedIn <span>↗</span></a>
+  </div>
+</div>
+</section>
+
+<footer>
+  <span>© 2026 Muhammad Ilyas Bacha</span>
+  <span>BIM Modeler · Civil Engineer</span>
+  <span>Peshawar, Pakistan</span>
+</footer>
+
+<script>
+// CURSOR
+const cur=document.getElementById('cur');
+const trail=document.getElementById('trail');
+let mx=0,my=0,tx=0,ty=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX;my=e.clientY;
+  cur.style.left=mx+'px';cur.style.top=my+'px';
+});
+(function anim(){
+  tx+=(mx-tx)*0.1;ty+=(my-ty)*0.1;
+  trail.style.left=tx+'px';trail.style.top=ty+'px';
+  requestAnimationFrame(anim);
+})();
+
+// NAV SCROLL
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>50);
+});
+</script>
 </body>
 </html>
